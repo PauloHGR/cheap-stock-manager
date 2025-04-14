@@ -1,0 +1,38 @@
+@if (isAdded) {
+    <app-add-stock-to-wallet [ticker]="stock().ticker" (close)="onCloseForm()"></app-add-stock-to-wallet>
+}
+<div class="text-button-container">
+    <p><strong>Indicadores Financeiros:</strong></p>
+    <button class="add-button" (click)="onAddStock()">+</button>
+</div>
+<table class="info-table">
+    <thead>
+        <tr>
+        <th>ROE</th>
+        <th>ROIC</th>
+        <th>Margem EBIT</th>
+        <th>EV/EBIT</th>
+        <th>LPA</th>
+        <th>Preço</th>
+        <th>ROIC Rank</th>
+        <th>EY Rank</th>
+        <th>Final Rank</th>
+        <th>Index</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>{{stock().roe}}</td>
+        <td>{{stock().roic}}</td>
+        <td>{{stock().margemEbit}}</td>
+        <td>{{stock().evEbit}}</td>
+        <td>{{stock().lpa}}</td>
+        <td>R${{stock().price}}</td>
+        <td>{{stock().roicRank}}°</td>
+        <td>{{stock().eyRank}}°</td>
+        <td>{{stock().finalRank}}°</td>
+        <td>{{stock().index}}°</td>
+        </tr>
+    </tbody>
+</table>
+

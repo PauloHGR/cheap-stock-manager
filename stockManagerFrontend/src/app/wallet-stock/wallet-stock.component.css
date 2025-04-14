@@ -1,0 +1,33 @@
+p {
+    position: relative;
+    width: 90%;
+    max-width: 190px;
+    height: 100vh;
+    margin: 2rem auto 2rem auto;
+    color: white;
+    background-color: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .total-bar {
+    background-color: #dcdcdc;
+    padding: 15px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+@media (max-width: 600px) {
+  .total-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 18px;
+    gap: 10px;
+  }
+}

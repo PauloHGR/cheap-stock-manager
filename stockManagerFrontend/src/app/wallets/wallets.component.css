@@ -1,0 +1,45 @@
+
+#wallets {
+    list-style: none;
+    padding: 0;
+    margin: auto auto -5rem 10rem;
+    background: none;
+    color: white;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+#wallets li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #555;
+}
+
+#wallets li:last-child {
+  border-bottom: none;
+}
+
+p {
+  position: relative;
+  width: 90%;
+  max-width: 190px;
+  height: 100vh;
+  margin: 2rem auto 2rem auto;
+  color: white;
+  background-color: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Empilha os itens em telas menores */
+    align-items: stretch; /* Faz com que os itens se estiquem na largura */
+  }
+
+  ul {
+    max-width: 100%; /* Faz com que a largura dos itens ocupe 100% do espaço disponível */
+    margin-bottom: 20px; /* Espaço entre os itens quando empilhados */
+  }
+}

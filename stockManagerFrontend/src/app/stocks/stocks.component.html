@@ -1,0 +1,7 @@
+<app-card-stock>
+    @for (stock of stocks(); track stock.ticker) {
+        <app-info-stock [ticker]="stock.ticker">
+            <app-stock-table [stock]="stock"></app-stock-table>    
+        </app-info-stock>
+    }
+</app-card-stock>

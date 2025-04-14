@@ -1,0 +1,13 @@
+<app-header />
+<div class="container-button">
+  <a class="button-text" (click)="onClickWallet()">Wallet</a>
+  <a>|</a>
+  <a class="button-text" (click)="onClickStock()">Get Stocks</a>
+</div>
+
+@if (wallets()) {
+  <app-wallets />
+}
+@if (stocks()) {
+  <app-stocks />
+}

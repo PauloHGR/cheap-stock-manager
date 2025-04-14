@@ -1,0 +1,46 @@
+.container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+a {
+    font-family: 'Jua', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #ffffff;
+  }
+
+  
+.button-text {
+    width: 210px;
+    height: 48px;
+    background: rgba(217, 217, 217, 0.4);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  @media (max-width: 768px) {
+    .button-text {
+      width: 100%;
+      max-width: 280px;
+    }
+  
+    a {
+      font-size: 1.5rem;
+    }
+  
+    .container-button {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

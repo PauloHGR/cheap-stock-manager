@@ -1,0 +1,17 @@
+@if (stocksFromWalletId().length > 0) {
+    <app-card-stock>
+        @for (stock of stocksFromWalletId(); track stock.ticker) {
+
+            <app-info-stock [ticker]="stock.ticker">
+                <app-get-wallet-stock-information [walletStock]="stock"></app-get-wallet-stock-information>
+            </app-info-stock>
+
+        }
+        <div class="total-bar">
+            <div>Money Applied</div>
+            <div>R${{wallet()?.moneyApplied}}</div>
+        </div>
+    </app-card-stock>
+} @else {
+    <p>No stocks added</p>
+}

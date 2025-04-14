@@ -1,0 +1,19 @@
+<div class="card-body">
+    <div class="card-section">
+    <strong>Purchased: {{walletStock().quantity}}</strong>
+    <small>Minning Date:<br>{{walletStock().minningDate}}</small>
+    </div>
+
+    <div class="card-section">
+    <strong>Price:</strong>
+    <div>{{stock | number: '1.2-2'}}</div>
+    </div>
+
+    <div class="card-total">
+    <div>R$:</div>
+    <div>{{(stock * walletStock().quantity) | number:'1.2-2'}}</div>
+    </div>
+    <button (click)="onRemoveStockFromWallet(walletStock().id)">
+        <span class="material-icons">delete</span>
+    </button>
+</div>
