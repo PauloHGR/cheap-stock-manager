@@ -63,7 +63,7 @@ Install the dependecies and start the frontend
 Start server
 
 ```bash
-  dotnet run
+  dotnet run --project ApiMinerCheapStocks\ApiMinerCheapStocks.csproj
 ```
 
 
