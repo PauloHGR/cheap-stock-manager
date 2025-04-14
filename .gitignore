@@ -1,0 +1,92 @@
+.vs/
+
+# ========================
+# BACKEND (.NET / C#)
+# ========================
+
+# Build results
+ApiMinerCheapStocks/bin/
+ApiMinerCheapStocks/obj/
+ApiMinerCheapStocks/out/
+ApiMinerCheapStocks/Generated_Code/
+
+# User-specific files
+ApiMinerCheapStocks/*.rsuser
+ApiMinerCheapStocks/*.suo
+ApiMinerCheapStocks/*.user
+ApiMinerCheapStocks/*.userosscache
+ApiMinerCheapStocks/*.sln.docstates
+
+# Auto-generated
+ApiMinerCheapStocks/*.log
+ApiMinerCheapStocks/*.tlog
+
+# VS Code and VS for Mac
+ApiMinerCheapStocks/.vscode/
+ApiMinerCheapStocks/.idea/
+ApiMinerCheapStocks/.vs
+
+
+# DotNet Secrets
+ApiMinerCheapStocks/secrets.json
+
+# Local DB
+ApiMinerCheapStocks/*.mdf
+ApiMinerCheapStocks/*.ldf
+
+# Others
+ApiMinerCheapStocks/*.dbmdl
+ApiMinerCheapStocks/*.bak
+ApiMinerCheapStocks/*.cache
+ApiMinerCheapStocks/*.tmp
+ApiMinerCheapStocks/*.pdb
+
+# dotnet-pack / NuGet packages
+ApiMinerCheapStocks/*.nupkg
+ApiMinerCheapStocks/*.snupkg
+ApiMinerCheapStocks/*.nuspec
+
+# Entity Framework Migrations
+ApiMinerCheapStocks/Migrations/
+
+# Logs
+ApiMinerCheapStocks/*.log
+
+# Publish output
+ApiMinerCheapStocks/publish/
+
+# Test results
+ApiMinerCheapStocks/TestResults/
+
+
+# ========================
+# FRONTEND (Angular)
+# ========================
+
+# Angular build output
+frontend/dist/
+frontend/out-tsc/
+
+# IDEs and editors
+frontend/.idea/
+frontend/.vscode/
+
+# Compiled output
+frontend/node_modules/
+frontend/tmp/
+frontend/temp/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/package-lock.json
+
+# Angular environment
+frontend/src/environments/environment*.ts
+
+# Optional npm cache directory
+frontend/.npm
+
+# Angular cache
+frontend/.angular/cache/
+
+# End of file
