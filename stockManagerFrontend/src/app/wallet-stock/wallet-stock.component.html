@@ -9,7 +9,7 @@
         }
         <div class="total-bar">
             <div>Money Applied</div>
-            <div>R${{wallet()?.moneyApplied}}</div>
+            <div>R${{wallet()?.moneyApplied | number: '1.2-2'}}</div>
         </div>
     </app-card-stock>
 } @else {

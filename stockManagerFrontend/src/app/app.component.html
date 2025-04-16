@@ -2,26 +2,31 @@
 <div class="layout">
   <app-side-bar>
       <div class="wallet-box">
-        <button class="button-text" (click)="onClickStock()">Get Stocks</button>
-        <button class="button-text" (click)="onClickWallet()">
+        <button class="button-text" routerLink="/stocks" routerLinkActive="selected-button">
+          Get Stocks
+        </button>
+        <button class="button-text" 
+        routerLink="/wallets" 
+        routerLinkActive="selected-button"
+        (click)="onClickWallet()">
           Wallets <span [class.rotated]="wallets()">▼</span>
         </button>
         <div class="wallet-info" [class.expanded]="wallets()">
-          <app-wallets (selectedWalletId)="onGetWalletId($event)"/>
+          <app-wallets/>
         </div>
       </div>
   </app-side-bar>
 </div>
-
-@if (walletId && !stocks()) {
+<router-outlet />
+<!--@if (walletId && !stocks()) {
   <app-wallet-stock [walletId]="walletId"/>
 } @else {
   <p>Select a wallet</p>
 }
 
 @if (stocks()) {
-  <app-stocks />
-}
+  <app-stocks></app-stocks>
+}-->
 
 
 

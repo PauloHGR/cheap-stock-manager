@@ -45,6 +45,26 @@
     cursor: pointer;
   }
 
+  .success-message {
+    background-color: #a50808;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: fadeInOut 3s ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+
   @media (max-width: 600px) {
     .card-header {
       font-size: 16px;

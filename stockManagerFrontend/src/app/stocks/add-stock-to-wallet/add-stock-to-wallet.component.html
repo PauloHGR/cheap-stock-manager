@@ -1,25 +1,31 @@
-<div class="backdrop" (click)="onCloseAddStock()"></div>
-<dialog open>
-  <h2>Add Stock</h2>
-  <form (ngSubmit)="onSubmitStock()">
-    <p>
-      <label for="wallet">Wallet</label>
-      <select id="wallet" name="wallet" [(ngModel)]="WalletId" required>
-        @for (wallet of wallets(); track wallet.id) {
-            <option [value]="wallet.id">{{wallet.name}}</option>
-      }
-      </select>
-    </p>
+<div class="backdrop" routerLink="../../"></div>
+@if (isAdded()) {
+  <div class="success-message">
+    Saved Successfully!
+  </div>
+} @else {
+  <dialog open>
+    <h2>Add Stock</h2>
+    <form (ngSubmit)="onSubmitStock()">
+      <p>
+        <label for="wallet">Wallet</label>
+        <select id="wallet" name="wallet" [(ngModel)]="WalletId" required>
+          @for (wallet of wallets(); track wallet.id) {
+              <option [value]="wallet.id">{{wallet.name}}</option>
+        }
+        </select>
+      </p>
 
-    <p>
-      <label for="quantity">Quantity</label>
-      <input type="number" id="quantity" name="quantity" [(ngModel)]="Quantity" required/>
-    </p>
+      <p>
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" [(ngModel)]="Quantity" required/>
+      </p>
 
-    <p class="actions">
-      <button type="button" (click)="onCloseAddStock()">Cancel</button>
-      <button type="submit">Add</button>
-    </p>
-  </form>
-</dialog>
+      <p class="actions">
+        <button type="button" routerLink="../../">Cancel</button>
+        <button type="submit">Add</button>
+      </p>
+    </form>
+  </dialog>
+}
 

@@ -1,3 +1,5 @@
-<button class="box-wallet" (click)="onClickWallet()">
+<button class="box-wallet" 
+[routerLink]="['/wallet', wallet().id]"
+routerLinkActive="selected-button">
     <span class="text-wallet">{{wallet().name}}</span>
 </button>

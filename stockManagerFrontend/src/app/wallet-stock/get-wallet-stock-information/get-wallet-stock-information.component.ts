@@ -18,6 +18,7 @@ export class GetWalletStockInformationComponent {
   private destroyRef = inject(DestroyRef);
   error = signal<string>('');
   stock = 0;
+  isDeleted = signal<boolean>(false);
 
   ngOnInit(){
     const subscription = this.stockService.getStockByTicker(this.walletStock().ticker)
@@ -30,11 +31,14 @@ export class GetWalletStockInformationComponent {
   }
 
   onRemoveStockFromWallet(id: string){
-    const subscription = this.walletStockService.removeStockFromWalletById(id)
-    .subscribe({
-      error: (e: Error) => this.error.set(e.message),
-      complete: () => console.log('Deleted')
-    });
-    this.destroyRef.onDestroy(() => subscription.unsubscribe())
+    const confirmed = confirm('Are you sure you want to remove this stock?');
+    if(confirmed){
+      const subscription = this.walletStockService.removeStockFromWalletById(id)
+      .subscribe({
+        error: (e: Error) => this.error.set(e.message),
+        complete: () => { console.log('Deleted'); this.isDeleted.set(true); }
+      });
+      this.destroyRef.onDestroy(() => subscription.unsubscribe())
+    }
   }
 }

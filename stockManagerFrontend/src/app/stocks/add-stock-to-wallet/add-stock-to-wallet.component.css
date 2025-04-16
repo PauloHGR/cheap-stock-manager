@@ -16,6 +16,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     background-color: #f9f9f9;
+
   }
 
   dialog h2 {
@@ -25,7 +26,7 @@
 
   form {
   max-width: 500px;
-  margin: 0.5rem auto 2rem auto;
+  margin: 0rem auto 2rem auto;
   padding: 2rem;
   background-color: #f4f4f4;
   border-radius: 12px;
@@ -79,6 +80,26 @@ form select {
 
 .actions button:hover {
   opacity: 0.9;
+}
+
+.success-message {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
 }
 
 /* Responsividade extra para telas pequenas */

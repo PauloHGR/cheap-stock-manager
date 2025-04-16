@@ -1,14 +1,9 @@
 <div>
     <ul id="wallets">
         @for (wallet of wallets(); track wallet.id) {
-            <li><app-wallet [wallet]="wallet" (selectedWalletId)="onSelectedWalletId($event)"/></li>
+            <li><app-wallet [wallet]="wallet"/></li>
         } @empty {
             <p>No data found!</p>
         }
     </ul>
 </div>
-<!--@if (walletId) {
-    <app-wallet-stock [walletId]="walletId"/>
-} @else {
-    <p>Select a wallet</p>
-}-->

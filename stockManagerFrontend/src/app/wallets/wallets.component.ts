@@ -1,8 +1,6 @@
-import { Component, DestroyRef, inject, OnInit, output, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { WalletComponent } from './wallet/wallet.component';
 import { WalletsService } from './wallets.service';
-import { WalletStockComponent } from '../wallet-stock/wallet-stock.component';
-import { CardStockComponent } from '../shared/card-stock/card-stock.component';
 
 @Component({
   selector: 'app-wallets',
@@ -16,8 +14,6 @@ export class WalletsComponent implements OnInit{
   error = signal<string>('');
   private destroyRef = inject(DestroyRef);
   wallets = this.walletService.loadedWallets;
-  walletId = '';
-  selectedWalletId = output<string>();
 
   ngOnInit(){
     const subscription = this.walletService.getAllAvailableWallets()
@@ -29,8 +25,4 @@ export class WalletsComponent implements OnInit{
     this.destroyRef.onDestroy(() => subscription.unsubscribe())
   }
 
-  onSelectedWalletId(walletId: string){
-    this.walletId = walletId;
-    this.selectedWalletId.emit(walletId);
-  }
 }

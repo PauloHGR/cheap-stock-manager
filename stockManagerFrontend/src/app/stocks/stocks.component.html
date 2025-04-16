@@ -3,9 +3,10 @@
         @for (stock of stocks(); track stock.ticker) {
             <div class="scroll-page">
                 <app-info-stock [ticker]="stock.ticker">
-                    <app-stock-table [stock]="stock"></app-stock-table>    
+                    <app-stock-table [stock]="stock"></app-stock-table>   
                 </app-info-stock>
             </div>
         }
     </app-card-stock>
 </div>
+<router-outlet /> 

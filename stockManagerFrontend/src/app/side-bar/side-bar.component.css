@@ -23,6 +23,10 @@
     margin-top: 6rem;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   @media (max-width: 768px) {
     .sidebar {
         width: 100%;

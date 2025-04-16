@@ -3,16 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { WalletsService } from '../../wallets/wallets.service';
 import { WalletStockService } from '../../wallet-stock/wallet-stock.service';
 import { WalletStockRequest } from './add-stock-to-wallet-request.model'
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-stock-to-wallet',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './add-stock-to-wallet.component.html',
   styleUrl: './add-stock-to-wallet.component.css'
 })
 export class AddStockToWalletComponent {
-  close = output();
+  
   ticker = input.required<string>();
   private walletService = inject(WalletsService);
   private walletStockService = inject(WalletStockService);
@@ -21,8 +22,10 @@ export class AddStockToWalletComponent {
   WalletId = '';
   wallets = this.walletService.loadedWallets;
   error = signal<string>('');
+  isAdded = signal<boolean>(false);
 
   ngOnInit(){
+    console.log(this.ticker());
     this.walletService.getAllAvailableWallets()
     .subscribe({
       error: (e: Error) => this.error.set(e.message),
@@ -38,13 +41,9 @@ export class AddStockToWalletComponent {
 
     const subscription = this.walletStockService.addStockToWallet(request)
     .subscribe({
-      complete: () => { this.close.emit(); }
+      complete: () => { this.isAdded.set(true); }
     });
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
-  }
-
-  onCloseAddStock(){
-    this.close.emit();
   }
 
 }
