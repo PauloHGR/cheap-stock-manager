@@ -1,0 +1,28 @@
+.scroll-container {
+    margin: -50rem auto 2rem auto;
+    height: 70vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    align-items: center;
+    padding-top: auto;
+    box-sizing: border-box;
+    width: 100%; 
+    max-width: 980px;
+    border-radius: 20px;
+    padding-bottom: 1rem;
+   
+  }
+  
+  .scroll-page {
+    scroll-snap-align: none;
+  }
+
+  .scroll-page::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scroll-page::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 4px;
+  }

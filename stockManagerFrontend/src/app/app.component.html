@@ -1,13 +1,28 @@
 <app-header />
-<div class="container-button">
-  <a class="button-text" (click)="onClickWallet()">Wallet</a>
-  <a>|</a>
-  <a class="button-text" (click)="onClickStock()">Get Stocks</a>
+<div class="layout">
+  <app-side-bar>
+      <div class="wallet-box">
+        <button class="button-text" (click)="onClickStock()">Get Stocks</button>
+        <button class="button-text" (click)="onClickWallet()">
+          Wallets <span [class.rotated]="wallets()">▼</span>
+        </button>
+        <div class="wallet-info" [class.expanded]="wallets()">
+          <app-wallets (selectedWalletId)="onGetWalletId($event)"/>
+        </div>
+      </div>
+  </app-side-bar>
 </div>
 
-@if (wallets()) {
-  <app-wallets />
+@if (walletId && !stocks()) {
+  <app-wallet-stock [walletId]="walletId"/>
+} @else {
+  <p>Select a wallet</p>
 }
+
 @if (stocks()) {
   <app-stocks />
 }
+
+
+
+

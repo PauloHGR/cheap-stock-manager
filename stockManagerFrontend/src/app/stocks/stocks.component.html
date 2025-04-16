@@ -1,7 +1,11 @@
-<app-card-stock>
-    @for (stock of stocks(); track stock.ticker) {
-        <app-info-stock [ticker]="stock.ticker">
-            <app-stock-table [stock]="stock"></app-stock-table>    
-        </app-info-stock>
-    }
-</app-card-stock>
+<div class="scroll-container">
+    <app-card-stock>
+        @for (stock of stocks(); track stock.ticker) {
+            <div class="scroll-page">
+                <app-info-stock [ticker]="stock.ticker">
+                    <app-stock-table [stock]="stock"></app-stock-table>    
+                </app-info-stock>
+            </div>
+        }
+    </app-card-stock>
+</div>

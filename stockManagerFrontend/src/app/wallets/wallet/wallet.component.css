@@ -1,13 +1,4 @@
 .box-wallet {
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 142px;
-    height: 48px;
-    background: rgba(217, 217, 217, 0.4);
-    backdrop-filter: blur(2px);
-    border-radius: 10px;
-    margin: 0rem 0 0.5rem 10rem;*/
     padding: 0.5rem 0;
     border-bottom: 1px solid #555;
     background: rgba(217, 217, 217, 0.4);
@@ -15,8 +6,9 @@
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    width: 232px;
-    height: 48px;
+    width: 212px;
+    height: 45px;
+    margin: auto auto auto auto;
   }
 
   .text-wallet {

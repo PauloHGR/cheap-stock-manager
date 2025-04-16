@@ -13,7 +13,7 @@ export class WalletsService {
     loadedWallets = this.wallets.asReadonly();
 
     getAllAvailableWallets(){
-        return this.getWallets("https://localhost:44368/api/v1/Wallet")
+        return this.getWallets("http://localhost:5002/api/v1/Wallet")
         .pipe(tap({
             next: (response) => { this.wallets.set(response); }
         })
@@ -21,7 +21,7 @@ export class WalletsService {
     }
 
     getWalletById(id: string){
-        return this.httpClient.get<WalletModel>("https://localhost:44368/api/v1/Wallet/" + id)
+        return this.httpClient.get<WalletModel>("http://localhost:5002/api/v1/Wallet/" + id)
         .pipe(
             map((response) => response),
             catchError((error) => {

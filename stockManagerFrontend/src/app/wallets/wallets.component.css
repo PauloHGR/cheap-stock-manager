@@ -2,13 +2,13 @@
 #wallets {
     list-style: none;
     padding: 0;
-    margin: auto auto -5rem 10rem;
+    /*margin: 2rem auto 2rem auto;
     background: none;
     color: white;
     border-radius: 20px;
     padding: 2rem;
     max-width: 300px;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
 }
 
 #wallets li {
@@ -38,7 +38,7 @@ p {
     align-items: stretch; /* Faz com que os itens se estiquem na largura */
   }
 
-  ul {
+  #wallets {
     max-width: 100%; /* Faz com que a largura dos itens ocupe 100% do espaço disponível */
     margin-bottom: 20px; /* Espaço entre os itens quando empilhados */
   }

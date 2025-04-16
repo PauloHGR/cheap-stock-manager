@@ -1,56 +1,12 @@
-  
-  /* Caixa (div) Responsiva */
-  div {
-    box-sizing: border-box;
-    position: relative;
-    max-width: 90%;
-    width: 100%;
-    margin: -0.5rem auto;
-    padding: 2rem;
-  
-    background: rgba(217, 217, 217, 0.15);
-    opacity: 0.4;
-    border: 1px solid #000000;
-    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-  }
+.top-bar {
 
-  h1 {
-    position: relative;
-    align-self: center;
-    max-width: 90%;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 0.5rem;
-  
-    font-family: 'JejuMyeongjo', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 2.5rem;
-    line-height: 1.2;
-    text-align: center;
-  
-    color: #c3b3d8;
-    }
-  
-  /* Responsividade com Media Queries */
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 3rem;
-    }
-  
-    div {
-      max-width: 600px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    h1 {
-      font-size: 3.5rem;
-    }
-  
-    div {
-      max-width: 700px;
-    }
-  }
+  background-color: #060e3c;
+  border-radius: 5px;
+  width: 98%;
+  height: 20px;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}

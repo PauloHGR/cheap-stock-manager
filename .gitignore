@@ -64,29 +64,29 @@ ApiMinerCheapStocks/TestResults/
 # ========================
 
 # Angular build output
-frontend/dist/
-frontend/out-tsc/
+stockManagerFrontend/dist/
+stockManagerFrontend/out-tsc/
 
 # IDEs and editors
-frontend/.idea/
-frontend/.vscode/
+stockManagerFrontend/.idea/
+stockManagerFrontend/.vscode/
 
 # Compiled output
-frontend/node_modules/
-frontend/tmp/
-frontend/temp/
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
-frontend/package-lock.json
+stockManagerFrontend/node_modules/
+stockManagerFrontend/tmp/
+stockManagerFrontend/temp/
+stockManagerFrontend/npm-debug.log*
+stockManagerFrontend/yarn-debug.log*
+stockManagerFrontend/yarn-error.log*
+stockManagerFrontend/package-lock.json
 
 # Angular environment
-frontend/src/environments/environment*.ts
+stockManagerFrontend/src/environments/environment*.ts
 
 # Optional npm cache directory
-frontend/.npm
+stockManagerFrontend/.npm
 
 # Angular cache
-frontend/.angular/cache/
+stockManagerFrontend/.angular/cache/
 
 # End of file

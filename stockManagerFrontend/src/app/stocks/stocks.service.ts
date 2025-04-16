@@ -13,7 +13,7 @@ export class StockService {
     loadedStocks = this.stocks.asReadonly();
 
     getAllAvailableStocks(){
-        return this.httpClient.get<Stock[]>("https://localhost:44368/api/v1/Stock")
+        return this.httpClient.get<Stock[]>("http://localhost:5002/api/v1/Stock")
         .pipe(
             map((response) => response),
             catchError(() => {
@@ -26,7 +26,7 @@ export class StockService {
     }
 
     getStockByTicker(ticker: string){
-        return this.httpClient.get<Stock>("https://localhost:44368/api/v1/Stock/" + ticker)
+        return this.httpClient.get<Stock>("http://localhost:5002/api/v1/Stock/" + ticker)
         .pipe(
             map((response) => response),
             catchError(() => {

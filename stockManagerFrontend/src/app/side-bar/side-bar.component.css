@@ -1,0 +1,32 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #060e3c;
+    border-radius: 5px;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    left: 0;
+    flex-shrink: 0;
+
+  }
+  
+  .logo {
+    color: #faf2f2;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .menu {
+    margin-top: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+      }
+
+  }

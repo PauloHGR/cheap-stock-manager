@@ -14,7 +14,7 @@ export class WalletStockService {
 
 
     getStocksFromWalletById(walletId: string){
-        return this.httpClient.get<WalletStock[]>("https://localhost:44368/api/v1/WalletStock/" + walletId)
+        return this.httpClient.get<WalletStock[]>("http://localhost:5002/api/v1/WalletStock/" + walletId)
         .pipe(
             map((response) => response),
             catchError((error) => {
@@ -38,7 +38,7 @@ export class WalletStockService {
     }
 
     addStockToWallet(request: WalletStockRequest){
-        return this.httpClient.post("https://localhost:44368/api/v1/WalletStock",
+        return this.httpClient.post("http://localhost:5002/api/v1/WalletStock",
            request
         )
         .pipe(
@@ -56,7 +56,7 @@ export class WalletStockService {
 
     removeStockFromWalletById(id: string){
         
-        return this.httpClient.delete("https://localhost:44368/api/v1/WalletStock/" + id)
+        return this.httpClient.delete("http://localhost:5002/api/v1/WalletStock/" + id)
         .pipe(
             map((response) => response),
             catchError((error) => {
