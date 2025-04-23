@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SideBarComponent } from '../side-bar/side-bar.component';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,8 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  private authService = inject(AuthService);
+  onLogout(){
+    this.authService.logoutUser();
+  }
 }

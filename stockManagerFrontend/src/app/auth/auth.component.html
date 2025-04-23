@@ -1,0 +1,27 @@
+@if (error()) {
+    <div class="alert-message">
+        <a (click)="onUpdateError()">{{error()}}</a>
+    </div>
+}
+<div class="login-container">
+    <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" formControlName="email"/>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" formControlName="password" />
+      </div>
+      <button type="submit" [disabled]="!form.valid">{{isForSignUp() ? 'Sign Up' : 'Login'}}</button>
+
+      @if (!isForSignUp()) {
+        <p>If you are not registered, please</p>
+        <button (click)="onSwapUserAuth()">Sign Up</button>
+      } @else {
+        <p>You are already registered</p>
+        <button (click)="onSwapUserAuth()">Login</button>
+      }
+    </form>
+  </div>

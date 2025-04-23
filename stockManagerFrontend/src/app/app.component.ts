@@ -1,10 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { WalletsComponent } from './wallets/wallets.component';
-import { StocksComponent } from './stocks/stocks.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { WalletStockComponent } from './wallet-stock/wallet-stock.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +15,17 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
     SideBarComponent,
     RouterLink,
     RouterLinkActive,
-    RouterOutlet]
+    RouterOutlet],
 })
 export class AppComponent {
 
   wallets = signal(false);
+  private authService = inject(AuthService);
+
+  onInit(){
+    this.authService.autoLogin();
+  }
+
   onClickWallet(){
     if(!this.wallets()){
       this.wallets.set(true);

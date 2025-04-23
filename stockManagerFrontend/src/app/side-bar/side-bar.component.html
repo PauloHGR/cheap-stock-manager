@@ -1,6 +1,8 @@
 <aside class="sidebar">
     <a routerLink=""><h1 class="logo">Stock Cheap Manager</h1></a>
-    <div class="menu">     
-        <ng-content/>
-    </div>
+    @if (isAuthenticated()) {
+        <div class="menu">     
+            <ng-content/>
+        </div>
+    }
 </aside>

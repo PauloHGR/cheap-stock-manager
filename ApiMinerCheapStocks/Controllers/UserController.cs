@@ -69,7 +69,19 @@ namespace ApiMinerCheapStocks.Controllers
             var result = await _userManager.CreateAsync(user, request.Password);
 
             if (result.Succeeded)
-                return this.Created("user", request.Email);
+            {
+                var loginSuccesful = await _signInManager.PasswordSignInAsync(request.Email,
+                request.Password,
+                isPersistent: false,
+                lockoutOnFailure: false);
+                if (loginSuccesful.Succeeded)
+                {
+                    var token = GetAuthenticateTokenUser(request);
+                    return this.Created("user", token);
+                }
+                else
+                    return BadRequest("login incorrect!");
+            }               
             else
                 return BadRequest(result);
         }

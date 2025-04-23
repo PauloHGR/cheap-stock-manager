@@ -1,0 +1,80 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ajusta para o espaço entre topbar e manter responsividade */
+    padding-left: 250px; /* espaço da sidebar fixa */
+    padding-top: 2rem;
+    box-sizing: border-box;
+    margin-top: -1000px;
+  }
+  
+  .login-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #060e3c;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #060e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #122472;
+  }
+
+  button:disabled,
+    button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+   }
+
+   .alert-message {
+    background-color: #af0a0a;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: fadeInOut 3s ease-in-out;
+  }
+

@@ -2,12 +2,14 @@
 using ApiMinerCheapStocks.Models;
 using ApiMinerCheapStocks.Services;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiMinerCheapStocks.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class StockController : ControllerBase
     {
         private readonly IStockRepository _stockRepository;
@@ -17,7 +19,7 @@ namespace ApiMinerCheapStocks.Controllers
             _stockRepository = stockRepository;
             _mapper = mapper;
         }
-
+        
         [HttpGet]
         [ProducesResponseType(200)]
         public async Task<IActionResult> GetStockAsync(CancellationToken cancellationToken)

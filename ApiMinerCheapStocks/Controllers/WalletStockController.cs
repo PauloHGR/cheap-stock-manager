@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiMinerCheapStocks.Controllers
 {
     [ApiController]
-    //[Authorize(AuthenticationSchemes = "Bearer")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("/api/v1/[controller]")]
     public class WalletStockController : ControllerBase
     {
