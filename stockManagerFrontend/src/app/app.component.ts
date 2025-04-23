@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { WalletsComponent } from './wallets/wallets.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
@@ -17,12 +17,12 @@ import { AuthService } from './auth/auth.service';
     RouterLinkActive,
     RouterOutlet],
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   wallets = signal(false);
   private authService = inject(AuthService);
 
-  onInit(){
+  ngOnInit(): void {
     this.authService.autoLogin();
   }
 

@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { AuthRequest } from "./authRequest.model";
-import { catchError, map, Subject, tap, throwError } from "rxjs";
+import { BehaviorSubject, catchError, map, Subject, tap, throwError } from "rxjs";
 import { User } from "./user.model";
 import { Router } from "@angular/router";
 
@@ -14,7 +14,7 @@ export interface AuthResponse {
 @Injectable({ providedIn: 'root'})
 export class AuthService {
 
-    user = new Subject<User>();
+    user = new BehaviorSubject<User>(null!);
     private router = inject(Router);
     tokenExpirationTimer: any;
 
@@ -81,16 +81,17 @@ export class AuthService {
     }
 
     autoLogin(){
+        
         const userData: {
             email: string;
             _token: string;
             _expirationDate: string;
         } = JSON.parse(localStorage.getItem('userData')!);
-
+       
         if(!userData){
             return;
         }
-
+       
         const loadedUser = new User(
             userData.email, 
             userData._token, 

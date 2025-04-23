@@ -4,18 +4,20 @@
 <div class="layout">
   <app-side-bar>
       <div class="wallet-box">
-        <button class="button-text" routerLink="/stocks" routerLinkActive="selected-button">
-          Get Stocks
-        </button>
-        <button class="button-text" 
-        routerLink="/wallets" 
-        routerLinkActive="selected-button"
-        (click)="onClickWallet()">
-          Wallets <span [class.rotated]="wallets()">▼</span>
-        </button>
-        <div class="wallet-info" [class.expanded]="wallets()">
-          <app-wallets/>
-        </div>
+      <button class="button-text" routerLink="/stocks" routerLinkActive="selected-button">
+        Get Stocks
+      </button>
+      <button class="button-text" 
+      routerLink="/wallets" 
+      routerLinkActive="selected-button"
+      (click)="onClickWallet()">
+        Wallets <span [class.rotated]="wallets()">▼</span>
+      </button>
+      
+      <div class="wallet-info" [class.expanded]="wallets()">
+        <app-wallets/>
+      </div>
+      
       </div>
   </app-side-bar>
 </div>

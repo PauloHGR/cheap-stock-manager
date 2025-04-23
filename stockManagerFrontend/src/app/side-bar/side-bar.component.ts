@@ -14,10 +14,12 @@ export class SideBarComponent {
   isAuthenticated = signal<boolean>(false);
 
   ngOnInit(){
+  
     const subscription = this.authService.user.subscribe(u => {
-      this.isAuthenticated.set(!u ? false : true)
+      this.isAuthenticated.set(!!u);
     });
 
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
+    
   }
 }
